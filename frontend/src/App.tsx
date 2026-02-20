@@ -31,13 +31,21 @@ function getLayoutOffsetTop(el: HTMLElement): number {
   return top;
 }
 
+const SCROLL_MARGIN: Record<string, number> = {
+  projects: 24,
+};
+const DEFAULT_SCROLL_MARGIN = 8;
+
 function scrollToSection(id: string) {
   const el = document.getElementById(id);
   if (!el) return;
 
   const navbarEl = document.querySelector('.navbar');
   const navbarHeight = navbarEl ? navbarEl.getBoundingClientRect().height : 60;
-  const targetY = getLayoutOffsetTop(el) - navbarHeight;
+  const heading = el.querySelector('h2') as HTMLElement | null;
+  const target = heading ?? el;
+  const margin = SCROLL_MARGIN[id] ?? DEFAULT_SCROLL_MARGIN;
+  const targetY = getLayoutOffsetTop(target) - navbarHeight - margin;
   const startY = window.scrollY;
   const distance = targetY - startY;
   const duration = 700;
