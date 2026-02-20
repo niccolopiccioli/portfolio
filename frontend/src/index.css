@@ -465,6 +465,10 @@ footer {
   .navbar-links a { font-size: 0.78rem; white-space: nowrap; }
 
   /* Hero */
+  .hero-centered {
+    justify-content: flex-start;
+    padding-top: calc(var(--navbar-height) + 4rem);
+  }
   .hero-cta { flex-direction: column; align-items: center; gap: 0.8rem; }
   .hero-cta .btn { width: 100%; max-width: 280px; text-align: center; }
 

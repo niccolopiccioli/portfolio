@@ -39,13 +39,23 @@ python manage.py migrate
 python manage.py runserver           # runs on localhost:8000
 ```
 
+**Avvio rapido (senza attivare il venv):**
+```bash
+cd backend && venv/bin/python manage.py runserver
+```
+
 ### Frontend
 ```bash
 cd frontend
 npm install
-npm run dev                          # Vite dev server (localhost:3000)
+npm run dev                          # Vite dev server (localhost:5173)
 npm run build                        # production build to frontend/build/
 npm run preview                      # preview production build
+```
+
+**Avvio rapido:**
+```bash
+cd frontend && npm run dev
 ```
 
 ## Architecture
