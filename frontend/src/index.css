@@ -452,17 +452,19 @@ footer {
 
   section { padding: 3rem 0; }
 
-  /* Navbar mobile: riga singola */
+  /* Navbar mobile: riga singola, font scala col viewport */
   :root { --navbar-height: 60px; }
   .navbar { height: var(--navbar-height); }
-  .navbar-inner { padding: 0 0.5rem; }
+  .navbar-inner { padding: 0 0.8rem; }
   .navbar-links {
+    width: 100%;
     flex-wrap: nowrap;
-    gap: 0.5rem;
+    justify-content: space-evenly;
+    gap: 0;
     overflow-x: hidden;
     padding: 0;
   }
-  .navbar-links a { font-size: 0.65rem; white-space: nowrap; }
+  .navbar-links a { font-size: clamp(0.58rem, 2.95vw, 0.85rem); white-space: nowrap; }
 
   /* Hero */
   .hero-centered {
