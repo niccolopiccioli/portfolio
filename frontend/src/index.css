@@ -452,18 +452,17 @@ footer {
 
   section { padding: 3rem 0; }
 
-  /* Navbar mobile: 2 righe, tutto visibile */
-  :root { --navbar-height: 88px; }
-  .navbar { height: auto; min-height: var(--navbar-height); padding: 0.4rem 0; }
-  .navbar-inner { padding: 0 1rem; }
+  /* Navbar mobile: riga singola */
+  :root { --navbar-height: 60px; }
+  .navbar { height: var(--navbar-height); }
+  .navbar-inner { padding: 0 0.5rem; }
   .navbar-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.3rem 0.8rem;
-    overflow-x: unset;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    overflow-x: hidden;
     padding: 0;
   }
-  .navbar-links a { font-size: 0.8rem; white-space: nowrap; }
+  .navbar-links a { font-size: 0.65rem; white-space: nowrap; }
 
   /* Hero */
   .hero-centered {
