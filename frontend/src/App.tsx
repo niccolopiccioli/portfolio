@@ -25,7 +25,8 @@ function scrollToSection(id: string) {
   const el = document.getElementById(id);
   if (!el) return;
 
-  const navbarHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--navbar-height')) || 60;
+  const navbarEl = document.querySelector('.navbar');
+  const navbarHeight = navbarEl ? navbarEl.getBoundingClientRect().height : 60;
   const targetY = el.getBoundingClientRect().top + window.scrollY - navbarHeight;
   const startY = window.scrollY;
   const distance = targetY - startY;
