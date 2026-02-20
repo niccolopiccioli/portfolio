@@ -21,13 +21,23 @@ function easeInOutQuart(t: number): number {
   return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
 }
 
+function getLayoutOffsetTop(el: HTMLElement): number {
+  let top = 0;
+  let current: HTMLElement | null = el;
+  while (current) {
+    top += current.offsetTop;
+    current = current.offsetParent as HTMLElement | null;
+  }
+  return top;
+}
+
 function scrollToSection(id: string) {
   const el = document.getElementById(id);
   if (!el) return;
 
   const navbarEl = document.querySelector('.navbar');
   const navbarHeight = navbarEl ? navbarEl.getBoundingClientRect().height : 60;
-  const targetY = el.getBoundingClientRect().top + window.scrollY - navbarHeight;
+  const targetY = getLayoutOffsetTop(el) - navbarHeight;
   const startY = window.scrollY;
   const distance = targetY - startY;
   const duration = 700;
