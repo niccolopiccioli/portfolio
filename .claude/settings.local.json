@@ -25,7 +25,8 @@
       "Bash(wt.exe new-tab --title \"Backend Django\" wsl.exe -e bash -c \"source venv/bin/activate && python manage.py runserver; exec bash\")",
       "Bash(wt.exe new-tab --title \"Frontend React\" wsl.exe -e bash -c \"cd /home/nicco/Code/try1/frontend && BROWSER=none npm start; exec bash\")",
       "Bash(npm run dev:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(python3:*)"
     ]
   }
 }
